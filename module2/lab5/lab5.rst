@@ -2,17 +2,29 @@ Lab 2.5: DAST Integration
 -------------------------
 
 ..  |lab25-1| image:: images/lab25-1.png
+        :width: 800px
 ..  |lab25-2| image:: images/lab25-2.png
+        :width: 800px
 ..  |lab25-3| image:: images/lab25-3.png
+        :width: 800px
 ..  |lab25-4| image:: images/lab25-4.png
+        :width: 800px
 ..  |lab25-5| image:: images/lab25-5.png
+        :width: 800px
 ..  |lab25-6| image:: images/lab25-6.png
+        :width: 800px
 ..  |lab25-7| image:: images/lab25-7.png
+        :width: 800px
 ..  |lab25-8| image:: images/lab25-8.png
+        :width: 800px
 ..  |lab25-9| image:: images/lab25-9.png
+        :width: 800px
 ..  |lab25-10| image:: images/lab25-10.png
+        :width: 800px
 ..  |lab25-11| image:: images/lab25-11.png
+        :width: 800px
 ..  |lab25-12| image:: images/lab25-12.png
+        :width: 800px
 
 
 ASM's DAST (Dynamic Application Security Testing) integration allows you to take the programmatic output from a vulnerability scan and use it to seed a security policy.  For this lab, we'll use output from WhiteHat's Sentinel(TM) product to create a security policy based on Sentinel's findings.
@@ -40,6 +52,10 @@ Task 1 - Create a Security Policy
 
     .. NOTE:: It's worth mentioning that ASM and Sentinel have more advanced integrations that we will not explore here.  This is mostly due to the logistics of procuring Sentinel accounts for all students attending this lab.  It's worth mentioning however, that providing an API key will allow you to pull in scan data directly from Sentinel into ASM as well as share ASM site mapping data back to Sentinel in order to improve scanning capabilities.
 
+
+Task 2 - Import the Scan Data
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 #.  Select the **Vulnerabilities** tab at the top:
 
         |lab25-3|
@@ -64,6 +80,11 @@ Task 1 - Create a Security Policy
 
         |lab25-8|
 
+
+
+Task 3 - Remediate some Vulnerabilities
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 #.  Select the checkbox at the top to select all of the SQL injection vulnerabilities and click **resolve**.  Note that there are a number of other options including "Resolve and Stage" which would put the changes into staging for further evaluation.
 
         |lab25-9|
@@ -76,16 +97,19 @@ Task 1 - Create a Security Policy
 
         |lab25-11|
 
+
+Task 4 - Review the Output
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 #.  Now navigate to **Security -> Application Security -> Parameters -> Parameters List** and you'll see that the ASM policy has been populated for you.
 
         |lab25-12|
 
-#.  Now return to the Vulnerabilities dialog and explore some of the other items if you wish.
-    
+
+#.  Now return to the Vulnerabilities dialog and explore some of the other items if you wish.  **Hint:** You can utilize **Tree View** under **Security -> Application Security -> Policy -> Tree View** to get a summary of what's in the policy.  Be sure you've selected the correct security policy in the dropdown.
+
 
     .. NOTE::  Data from a vulnerability scan can be a great way to get an ASM policy up and running quickly but you should consider that there may be vulnerabilities in the application beyond the reach of the scanner.  It is therefore a good idea in many instances to enable the Automatic Policy Builder after policy creation to help refine the policy and tighten security over time.
-
-
 
 |
 |
